@@ -38,4 +38,5 @@
          sh "terraform destroy --auto-approve -input=false"
        }
       }
-   }
+    }
+}
