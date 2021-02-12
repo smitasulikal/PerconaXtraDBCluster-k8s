@@ -32,5 +32,10 @@
           sh 'terraform apply -input=false'
         }
       }
-    }
-  }
+
+      stage('Destroy') {
+         steps {
+         sh "terraform destroy --auto-approve -input=false"
+       }
+      }
+   }
