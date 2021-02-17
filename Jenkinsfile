@@ -1,4 +1,5 @@
-  pipeline {
+def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'personal_aws']] 
+pipeline {
     agent {
       node {
         label "master"
