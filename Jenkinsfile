@@ -19,7 +19,7 @@
         }
       }
 
-      stage('Approval') {
+      stage('Apply Approval') {
         steps {
           script {
             def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
@@ -30,6 +30,14 @@
       stage('TF Apply') {
         steps {
           sh 'terraform apply --auto-approve -input=false'
+        }
+      }
+
+      stage('Destroy Approval') {
+        steps {
+          script {
+            def userInput = input(id: 'confirm', message: 'Destroy Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Destroy terraform', name: 'confirm'] ])
+          }
         }
       }
 
