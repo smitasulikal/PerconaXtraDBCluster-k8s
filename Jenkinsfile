@@ -1,4 +1,4 @@
-def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'personal_aws']] 
+@Library('github.com/releaseworks/jenkinslib') _ 
 pipeline {
     agent {
       node {
